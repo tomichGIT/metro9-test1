@@ -9,12 +9,13 @@ import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import SearchModal from "@/components/SearchModal";
 
-import type { AppProps } from "next/app";
+//import type { AppProps } from "next/app";
 
 // agregar GlobalInit a la lista de componentes dinamicos
 const GlobalInit = dynamic(() => import('../components/GlobalInit'), { ssr: false });
 
-export default function App({ Component, pageProps }: AppProps) {
+//export default function App({ Component, pageProps }: AppProps) {
+export default function App() {
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Footer />
         </div>
       </div>
-      {/* <SearchModal /> */}
+      <SearchModal />
     <GlobalInit />
     </>
   );
