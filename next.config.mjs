@@ -15,6 +15,15 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    // hago un rewrite para los <img> de metronic viejos. Si fueran <Image> lo corregi automáticamente
+    async rewrites() {
+        return [
+            {
+                source: '/media/:path*',
+                destination: isProd ? '/metro9-test1/media/:path*' : '/media/:path*',
+            },
+        ];
+    },
 };
 
 export default nextConfig;
