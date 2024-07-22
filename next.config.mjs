@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-    basePath: '/metro9-test1',
-    assetPrefix: '/metro9-test1/',
+    basePath: isProd ? '/metro9-test1' : '',
+    assetPrefix: isProd ? '/metro9-test1/' : ''
 };
 
 export default nextConfig;
