@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+old_*
+no_*
+
+# Evito enviar lockb de Bun para que use el de package json
+# para que funcione github-pages
+# bun.lockb
