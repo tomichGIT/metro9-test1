@@ -27,3 +27,12 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+
+// Código original de next.config.js
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//     reactStrictMode: true,
+//   };
+  
+//   export default nextConfig;

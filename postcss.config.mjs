@@ -1,9 +1,5 @@
 /** @type {import('postcss-load-config').Config} */
 const config = {
-  // plugins: {
-  //   tailwindcss: {},
-  // },
-  // Metronic 9
   plugins: {
     'postcss-import': {},
     'tailwindcss/nesting': 'postcss-nesting',
@@ -19,18 +15,3 @@ const config = {
 };
 
 export default config;
-
-
-// export de Metronic 9
-// export const plugins = {
-//   'postcss-preset-env': {},
-//   'postcss-import': {},
-//   'tailwindcss/nesting': 'postcss-nesting',
-//   'postcss-preset-env': {
-//     'features': {
-//       'nesting-rules': false
-//     }
-//   },
-//   'tailwindcss': {},
-//   'autoprefixer': {},
-// };

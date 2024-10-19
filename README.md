@@ -1,4 +1,16 @@
-Prueba de Metronic9 con Next.js
+# Prueba de Metronic Tailwind HTML Integration with Next.js
+
+Funciona, pero esta vacía. Tampoco se ve que Metronic tenga muchos componentes en react. Lo mas recomendable será:
+
+visualizar el código HTML+Tailwind, y crear tus propios componentes en NxtJs a medida que los necesites.
+
+// demos 1 a 10 en html
+https://keenthemes.com/metronic/tailwind/demo1   
+
+// Tal vez la versión de react tenga los mismos componentes, se puede intentar buscar:
+// demos 1 a 10 en react
+https://keenthemes.com/metronic/tailwind/react/demo1/
+
 
 
 ## Getting Started

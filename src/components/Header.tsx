@@ -13,7 +13,7 @@ function Header() {
     id="header_container"
   >
     <div className="flex gap-1 lg:hidden items-center -ml-1">
-      <a className="shrink-0" href="html/demo1.html">
+      <a className="shrink-0" href="/">
         <img alt="" className="max-h-[25px] w-full" src="/media/app/mini-logo.svg" />
       </a>
       <div className="flex items-center">
@@ -53,7 +53,7 @@ function Header() {
             <div className="menu-item active">
               <a
                 className="menu-link text-nowrap text-sm text-gray-700 font-medium menu-item-hover:text-primary menu-item-active:text-gray-900 menu-item-active:font-semibold"
-                href="html/demo1.html"
+                href="/"
               >
                 <span className="menu-title text-nowrap">Home</span>
               </a>

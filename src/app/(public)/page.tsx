@@ -1,38 +1,21 @@
-"use client"
-
-// necesario para GlobaLInit
-import dynamic from 'next/dynamic'
-
-// componentes de Metronic
-import Footer from "@/components/Footer";
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
-import SearchModal from "@/components/SearchModal";
-
-//import type { AppProps } from "next/app";
-
-// agregar GlobalInit a la lista de componentes dinamicos
-const GlobalInit = dynamic(() => import('@/components/GlobalInit'), { ssr: false });
-
-//export default function App({ Component, pageProps }: AppProps) {
-export default function App({children}) {
-
-  return (
+const Home = () => {
+  return ( 
     <>
-      <div className="flex grow">
-        {/* <Sidebar /> */}
-        <div className="wrapper flex grow flex-col">
-          <Header />
-          <main className="grow content pt-5" id="content" role="content">
-            <div className="container-fixed" id="content_container">
-              {children}
-            </div>
-          </main>
-          <Footer />
-        </div>
-      </div>
-      <SearchModal />
-    <GlobalInit />
+      <h1 className="font-bold my-4">Landing Page Pública</h1>
+
+      esta sección no tiene sidebar al ser pública. Probar las siguientes secciones privadas:
+
+      <ul>
+        <li>
+          <a className="underline" href="profiles/creator">Profile Creador (privado)</a>
+
+        </li>
+        <li>
+          <a className="underline" href="profiles/public">Perfil público (privado)</a>
+        </li>
+      </ul>
     </>
-  );
+   );
 }
+
+export default Home;
