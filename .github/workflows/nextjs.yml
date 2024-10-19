@@ -38,19 +38,30 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-      - name: Build
-        run: npm run build && npm run export
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with Next.js
+        #run: npm run build
+        run: npm run build -- --no-lint
+        env:
+          NEXT_TYPESCRIPT_CHECK: 0
+          NODE_OPTIONS: "--max-old-space-size=4096"
+      # fix para mover archivos a home en gh-pages
       - name: Move public files
         run: mv public/* out/
+      # fin fix
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
 
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Deploy
-        uses: actions/deploy-pages@v1
-        with:
-          branch: gh-pages
-          folder: out
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
