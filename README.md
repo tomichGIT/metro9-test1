@@ -169,16 +169,17 @@ display: contents;
 }
 ```
 
-Copiarme las carpetas de media y fonts a "public" de nextjs
+Copiarme las carpetas de media y fonts a "public" de nextjs  
 Copy the media folder from the metronic-tailwind-html package's dist/assets/media directory into your NextJs project's public directory.
 
-"C:\xampp\htdocs\metronic9\metronic-tailwind-html\dist\assets\vendors\keenicons\fonts"
+`C:\xampp\htdocs\metronic9\metronic-tailwind-html\dist\assets\vendors\keenicons\fonts`
 
 
-Corregir las fuentes. En cada archivo styles.css de "src/metronic/vendors/keenicons" (son 4 carpetas [duotone, filled, solid, outline]) cambiar la ruta de las fuentes de "fonts/..." a "/fonts/..." (cambiar 4 archivos)
-
+Corregir las fuentes. En cada archivo styles.css de `src/metronic/vendors/keenicons` (son 4 carpetas [duotone, filled, solid, outline]) cambiar la ruta de las fuentes de `fonts/...` a `/fonts/...` (cambiar 4 archivos)
 
 
 Agregarle al body la clase "demo1"
 
-"<body className={`flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500 ${inter.className}`}>{children}</body>"
+```js
+<body className={`flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500 ${inter.className}`}>{children}</body>
+```
