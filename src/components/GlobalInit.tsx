@@ -1,28 +1,17 @@
-// GlobalInit.tsx
-import { useEffect } from "react";
-import KTComponent from "@/metronic/core";
-import KTLayout from "@/metronic/app/layouts/demo1";
+"use client";
+
+import {useEffect} from "react";
+import KTComponent from "../metronic/core";
+import KTLayout from "../metronic/app/layouts/demo1";
+import {usePathname} from "next/navigation";
 
 export default function GlobalInit() {
-    //console.log("Corriendo KTLayout!")
+    const pathname = usePathname();
+
     useEffect(() => {
         KTComponent.init();
         KTLayout.init();
-}, []);
+    }, [pathname]);
 
-return <></>
+    return <></>
 }
-
-
-// import {useEffect} from "react";
-// import KTComponent from "@/metronic/core";
-// import KTLayout from "@/metronic/app/layouts/demo1";
-
-// export default function GlobalInit() {
-//     useEffect(() => {
-//         KTComponent.init();
-//         KTLayout.init();
-//     }, []);
-
-//     return <></>
-// }

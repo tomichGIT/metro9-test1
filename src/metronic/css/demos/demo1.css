@@ -7,10 +7,6 @@
 	--tw-header-height: theme('custom.layouts.demo1.header.height.desktop');
 }
 
-/* .demo1 {
-	background: red!important;
-} */
-
 @media (max-width: theme('screens.lg')) {
 	.demo1 {
 		--tw-sidebar-width: theme('custom.layouts.demo1.sidebar.width.mobile');

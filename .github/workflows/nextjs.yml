@@ -46,11 +46,10 @@ jobs:
         env:
           NEXT_TYPESCRIPT_CHECK: 0
           NODE_OPTIONS: "--max-old-space-size=4096"
-        # fix para mover archivos a home en gh-pages
+        # Fix1: Move Public files from "public" to "/" for gh-pages
       - name: Move public files
-        #run: mv public/* out/
         run: rsync -a public/ out/
-        # fin fix
+        # Fix1: end
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

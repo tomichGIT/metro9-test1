@@ -1,8 +1,9 @@
-const KTLayout = {
-	_isSidebarCollapse() {
+class KTLayout {
+	static _isSidebarCollapse() {
 		return document.body.classList.contains('sidebar-collapse');
-	},
-	_handleMegaMenu() {
+	}
+
+	static _handleMegaMenu() {
 		const megamenuEl = document.querySelector('#megamenu');
 		if (!megamenuEl) return;
 
@@ -12,8 +13,9 @@ const KTLayout = {
 		setTimeout(() => {
 			menu.enable();
 		}, 500);
-	},
-	_handleSidebar() {
+	}
+
+	static _handleSidebar() {
 		const sidebarToggle = KTToggle.getInstance(this.sidebarToggleEl);
 		sidebarToggle?.on('toggle', () => {
 			this.sidebarEl.classList.add('animating');
@@ -24,8 +26,9 @@ const KTLayout = {
 				this.sidebarEl.classList.remove('animating');
 			});
 		});
-	},
-	_handleSidebarMenu() {
+	}
+
+	static _handleSidebarMenu() {
 		const menuEl = document.querySelector('#sidebar_menu');
 		const scrollableEl = document.querySelector('#sidebar_scrollable');
 		const menuActiveItemEl = menuEl.querySelector(".menu-item.active");
@@ -38,8 +41,9 @@ const KTLayout = {
 			top: KTDom.getRelativeTopPosition(menuActiveItemEl, scrollableEl) - 100,
 			behavior: 'instant'
 		});
-	},
-	init() {
+	}
+
+	static init() {
 		this.sidebarEl = document.querySelector('#sidebar');
 		this.sidebarWrapperEl = document.querySelector('#sidebar_wrapper');
 		this.headerEl = document.querySelector('#header');
@@ -49,12 +53,16 @@ const KTLayout = {
 			this._handleSidebar();
 			this._handleSidebarMenu();
 		}
-		//console.log("Corriendo KTLayout.init() en el archivo demo1.js");
-	},
-	isSidebarCollapse() {
+	}
+
+	static isSidebarCollapse() {
 		return this._isSidebarCollapse();
 	}
 }
 
+KTDom.ready(() => {
+	console.log("KTLayout.init, pero lo quito según el README.md");
+	//KTLayout.init();
+});
 
 export default KTLayout;

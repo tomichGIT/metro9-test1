@@ -21,8 +21,8 @@ export default function RootLayout({
 
   // Importante, el body incluye className "demo1"
   return (
-    <html lang="en">
-      <body className={`flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500 ${inter.className}`}>{children}</body>
+    <html className="h-full light" data-theme="true" lang="en">
+      <body className={`antialiased flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500 ${inter.className}`}>{children}</body>
     </html>
   );
 }
